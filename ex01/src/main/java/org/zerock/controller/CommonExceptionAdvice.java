@@ -25,7 +25,7 @@ public class CommonExceptionAdvice {
     ModelAndView modelAndView = new ModelAndView();
     modelAndView.setViewName("/error_common");
     modelAndView.addObject("exception", ex);
-
+    
     return modelAndView;
   }
 

@@ -26,7 +26,7 @@ public class BoardDAOTest {
 
   private static Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);
 
-  @Test
+/*  @Test
   public void testCreate() throws Exception {
 
     BoardVO board = new BoardVO();
@@ -39,14 +39,14 @@ public class BoardDAOTest {
   @Test
   public void testRead() throws Exception {
 
-    logger.info(dao.read(1).toString());
+    logger.info(dao.read(2).toString());
   }
 
   @Test
   public void testUpdate() throws Exception {
 
     BoardVO board = new BoardVO();
-    board.setBno(1);
+    board.setBno(2);
     board.setTitle("수정된 글입니다.");
     board.setContent("수정 테스트 ");
     dao.update(board);
@@ -60,7 +60,6 @@ public class BoardDAOTest {
 
   @Test
   public void testListAll() throws Exception {
-
     logger.info(dao.listAll().toString());
 
   }
@@ -75,7 +74,7 @@ public class BoardDAOTest {
     for (BoardVO boardVO : list) {
       logger.info(boardVO.getBno() + ":" + boardVO.getTitle());
     }
-  }
+  }*/
 
   @Test
   public void testListCriteria() throws Exception {
@@ -91,7 +90,7 @@ public class BoardDAOTest {
     }
   }
 
-  @Test
+ /* @Test
   public void testURI() throws Exception {
 
     UriComponents uriComponents = UriComponentsBuilder.newInstance().path("/board/read").queryParam("bno", 12)
@@ -131,6 +130,6 @@ public class BoardDAOTest {
     logger.info("=====================================");
 
     logger.info("COUNT: " + dao.listSearchCount(cri));
-  }
+  }*/
 
 }

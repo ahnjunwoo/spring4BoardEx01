@@ -62,8 +62,8 @@
 <script>
     
     var result = '${msg}';
-    
-    if(result == 'SUCCESS'){
+    debugger;
+    if(result == 'success'){
     	alert("처리가 완료되었습니다.");
     }
     

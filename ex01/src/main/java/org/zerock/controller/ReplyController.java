@@ -1,11 +1,14 @@
 package org.zerock.controller;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +20,7 @@ import org.zerock.domain.Criteria;
 import org.zerock.domain.PageMaker;
 import org.zerock.domain.ReplyVO;
 import org.zerock.service.ReplyService;
+import org.zerock.test.BoardDAOTest;
 
 @RestController
 @RequestMapping("/replies")
@@ -24,9 +28,13 @@ public class ReplyController {
 
 	@Inject
 	private ReplyService service;
+	
+	private static Logger logger = LoggerFactory.getLogger(ReplyController.class);
+	
 	@RequestMapping(value="", method = RequestMethod.POST)
 	public ResponseEntity<String> register(@RequestBody ReplyVO vo){
 		ResponseEntity<String> entity = null;
+		logger.debug("댓글등록 컨트롤러 시작!");
 		try{
 			service.addReply(vo);
 			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);

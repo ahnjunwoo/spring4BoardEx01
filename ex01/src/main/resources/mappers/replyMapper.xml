@@ -39,5 +39,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 FROM TBL_REPLY 
 	 WHERE rno = #{rno}
 	 </delete>
-
+	 
+	 
+	 <select id="listPage" resultType="ReplyVO">
+	 	SELECT *
+		FROM TBL_REPLY
+		WHERE bno = #{bno}
+		ORDER BY rno DESC
+		limit #{cri.pageStart}, #{cri.perPageNum}
+	 </select>
+	 
+	 <select id="count" resultType="int">
+	 	SELECT COUNT(bno) 
+	 	FROM TBL_REPLY
+	 	WHERE BNO = #{bno} 
+	 </select>
 </mapper>

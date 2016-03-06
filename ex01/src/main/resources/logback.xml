@@ -26,11 +26,16 @@
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </logger>
-    <logger name="org.springframework.web" level="DEBUG" >
-        <appender-ref ref="STDOUT" />
-        <appender-ref ref="FILE" />
-    </logger>
-     
+     <!-- Query Loggers -->
+    <logger name="jdbc" level="OFF"/>
+  
+  	<logger name="jdbc.sqlonly" level="DEBUG" additivity="false">>
+    	<appender-ref ref="STDOUT" />
+  	</logger>  
+  
+  	<logger name="jdbc.resultsettable" level="DEBUG" additivity="false">> 
+    	<appender-ref ref="STDOUT" />
+  	</logger>  
     <!-- turn OFF all logging (children can override) -->
     <root level="INFO">
         <appender-ref ref="STDOUT" />

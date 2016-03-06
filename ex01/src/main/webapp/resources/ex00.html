@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/resources/handlerbars/handlebars-v4.0.5.js"></script>
+<script type="text/javascript">
+	var source = "<h1><p>{{name}}</p> <p>{{userid}}</p> <p>{{addr}}</p></h1>";
+	var template = Handlebars.compile(source);
+	var data = {name:"홍길동", userid:"user00", addr:"조선 한양"};
+	
+	$("#displayDiv").html(template(data));
+</script>
+<div id="displayDiv">
+
+</div>
+</body>
+</html>

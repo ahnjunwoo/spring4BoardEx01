@@ -54,4 +54,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	FROM TBL_REPLY
 	 	WHERE BNO = #{bno} 
 	 </select>
+	 
+	  <select id="getBno" resultType="int">
+	 	SELECT bno
+	 	FROM
+	 	TBL_REPLY
+	 	WHERE RNO = #{rno}
+	 </select>
 </mapper>
